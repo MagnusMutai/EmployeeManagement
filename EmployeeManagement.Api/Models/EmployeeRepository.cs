@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using EmployeeManagement.Models;
+using Microsoft.EntityFrameworkCore;
 namespace EmployeeManagement.Api.Models
 {
     public class EmployeeRepository: IEmployeeRepository
@@ -16,7 +17,7 @@ namespace EmployeeManagement.Api.Models
             return result.Entity;
         }
 
-       public async void DeleteEmployee(int employeeId)
+        public async void DeleteEmployee(int employeeId)
         {
             var result = await appDbContext.Employees
                 .FirstOrDefaultAsync(e => e.EmployeeId == employeeId);
@@ -25,7 +26,6 @@ namespace EmployeeManagement.Api.Models
                 appDbContext.Employees.Remove(result);
                 await appDbContext.SaveChangesAsync();
             }
-            return result;
         }
 
         public async Task<Employee> GetEmployee(int employeeId)

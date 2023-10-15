@@ -2,6 +2,7 @@
 
 namespace EmployeeManagement.Api.Models
 {
+    //Repository Pattern
     public interface IEmployeeRepository
     {
         Task<IEnumerable<Employee>> GetEmployees();
