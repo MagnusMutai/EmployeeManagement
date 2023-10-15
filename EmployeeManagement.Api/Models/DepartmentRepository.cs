@@ -1,4 +1,5 @@
-﻿using EmployeeManagement.Models
+﻿using EmployeeManagement.Models;
+
 namespace EmployeeManagement.Api.Models
 {
     public class DepartmentRepository : IDepartmentRepository
