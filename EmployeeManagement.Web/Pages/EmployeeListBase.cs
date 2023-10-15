@@ -7,14 +7,15 @@ namespace EmployeeManagement.Web.Pages
     {
         public IEnumerable<Employee> Employees { get; set; }
 
-        protected override Task OnInitializedAsync()
+        protected override async Task OnInitializedAsync()
         {
-            LoadEmployees();
-            return base.OnInitializedAsync();
+            await Task.Run(LoadEmployees);
         }
 
         private void LoadEmployees()
         {
+            System.Threading.Thread.Sleep(3000);
+             
             Employee e1 = new Employee
             {
                 EmployeeId = 1,
