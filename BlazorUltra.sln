@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34202.233
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeManagement.Models", "EmployeeManagement.Models\EmployeeManagement.Models.csproj", "{A7FAD649-11B1-44C3-8C72-36EB3A57BAC4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmployeeManagement.Models", "EmployeeManagement.Models\EmployeeManagement.Models.csproj", "{A7FAD649-11B1-44C3-8C72-36EB3A57BAC4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeManagement.Web", "EmployeeManagement.Web\EmployeeManagement.Web.csproj", "{7A5E468C-F864-4435-875B-839E412C4236}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmployeeManagement.Web", "EmployeeManagement.Web\EmployeeManagement.Web.csproj", "{7A5E468C-F864-4435-875B-839E412C4236}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeManagement.Api", "EmployeeManagement.Api\EmployeeManagement.Api.csproj", "{7C2A47BF-77CE-4B3C-975C-E81F1C3D1407}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{7A5E468C-F864-4435-875B-839E412C4236}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7A5E468C-F864-4435-875B-839E412C4236}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7A5E468C-F864-4435-875B-839E412C4236}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C2A47BF-77CE-4B3C-975C-E81F1C3D1407}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C2A47BF-77CE-4B3C-975C-E81F1C3D1407}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C2A47BF-77CE-4B3C-975C-E81F1C3D1407}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C2A47BF-77CE-4B3C-975C-E81F1C3D1407}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
