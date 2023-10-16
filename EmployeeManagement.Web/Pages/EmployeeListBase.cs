@@ -14,7 +14,6 @@ namespace EmployeeManagement.Web.Pages
 
         private void LoadEmployees()
         {
-            System.Threading.Thread.Sleep(3000);
              
             Employee e1 = new Employee
             {
