@@ -47,10 +47,24 @@ namespace EmployeeManagement.Api.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, "Error ocurred while retrieving data from the database");
             }
         }
+
         [HttpPost]
         public async Task<ActionResult<Employee>> CreateEmployee(Employee employee)
         {
-            return Ok();
+            try
+            {
+                if(employee == null)
+                {
+                    return BadRequest();
+                }
+                var createdEmployee = await employeeRepository.AddEmployee(employee);
+                return CreatedAtAction(nameof(GetEmployee), new {id =createdEmployee.EmployeeId}, createdEmployee);
+            }
+            catch (Exception)
+            {
+
+                return StatusCode(StatusCodes.Status500InternalServerError, "Error ocurred while retrieving data from the database");
+            }
         }
     }
 }
