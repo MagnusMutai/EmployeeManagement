@@ -1,6 +1,6 @@
-﻿using EmployeeManagement.Api.Models;
+﻿using Microsoft.AspNetCore.Mvc;
+using EmployeeManagement.Api.Models;
 using EmployeeManagement.Models;
-using Microsoft.AspNetCore.Mvc;
 
 namespace EmployeeManagement.Api.Controllers
 {
@@ -57,7 +57,16 @@ namespace EmployeeManagement.Api.Controllers
                 {
                     return BadRequest();
                 }
+
+                var emp = employeeRepository.GetEmployeeByEmail(employee.Email);
+                if(emp != null)
+                {
+                    ModelState.AddModelError("email", "Employee email already in use");
+                    return BadRequest(ModelState);
+                }
+
                 var createdEmployee = await employeeRepository.AddEmployee(employee);
+
                 return CreatedAtAction(nameof(GetEmployee), new {id =createdEmployee.EmployeeId}, createdEmployee);
             }
             catch (Exception)
