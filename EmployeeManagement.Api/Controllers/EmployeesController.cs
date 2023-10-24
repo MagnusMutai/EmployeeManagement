@@ -15,8 +15,9 @@ namespace EmployeeManagement.Api.Controllers
             this.employeeRepository = employeeRepository;
         }
 
+        //Do not use this verv specification with more than one search parameter-recommended
         [HttpGet("{search}/{name}/{gender?}")]
-        public async Task<ActionResult<IEnumerable<Employee>>> Search(string? name, Gender? gender)
+        public async Task<ActionResult<IEnumerable<Employee>>> Search(string name, Gender? gender)
         {
             try
             {
@@ -137,8 +138,10 @@ namespace EmployeeManagement.Api.Controllers
             catch (Exception)
             {
 
-                return StatusCode(StatusCodes.Status500InternalServerError, "Error deletign data");
+                return StatusCode(StatusCodes.Status500InternalServerError, "Error deleting data");
             }
         }
+
+        
     }
 }
