@@ -10,9 +10,15 @@ namespace EmployeeManagement.Web.Services
         {
             this.httpClient = httpClient;
         }
-        public Task<IEnumerable<Employee>> GetEmployees()
+
+        public async Task<Employee> GetEmployee(int id)
         {
-            throw new NotImplementedException();
+            return await httpClient.GetFromJsonAsync<Employee>("api/employees/{id}");
+        }
+
+        public async Task<IEnumerable<Employee>> GetEmployees()
+        {
+            return await httpClient.GetFromJsonAsync<Employee[]>("api/employees");
         }
     }
 }
