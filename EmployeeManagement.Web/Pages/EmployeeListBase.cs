@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Components;
 
 namespace EmployeeManagement.Web.Pages
 {
-    public class EmployeeListBase : ComponentBase
+    public class EmployeeListBase : Microsoft.AspNetCore.Components.ComponentBase
     {
 
         [Inject]

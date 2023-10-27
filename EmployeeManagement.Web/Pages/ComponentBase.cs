@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Components;
 
 namespace EmployeeManagement.Web.Pages
 {
-    public class EmployeeDetailsBase : ComponentBase
+    public class ComponentBase : Microsoft.AspNetCore.Components.ComponentBase
     {
         public Employee Employee { get; set; } = new Employee();
 
@@ -16,8 +16,8 @@ namespace EmployeeManagement.Web.Pages
 
         protected override async Task OnInitializedAsync()
         {
-            Id = Id ?? "1";
-            Employee = await EmployeeService.GetEmployee(int.Parse(Id));
+            Employee = await EmployeeService.GetEmployee(Convert.ToInt32(Id));
         }
+
     }
 }
