@@ -7,10 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="Pages\EmployeeDetails.razor" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\EmployeeManagement.Models\EmployeeManagement.Models.csproj" />
   </ItemGroup>
 
@@ -23,18 +19,6 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-  </ItemGroup>
-
-  <ItemGroup>
-    <UpToDateCheckInput Remove="Pages\EmployeeDetails.razor" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <_ContentIncludedByDefault Remove="Pages\EmployeeDetails.razor" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="Pages\EmployeeDetails.razor" />
   </ItemGroup>
 
 </Project>
