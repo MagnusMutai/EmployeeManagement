@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Components;
 
 namespace EmployeeManagement.Web.Pages
 {
-    public class ComponentBase : Microsoft.AspNetCore.Components.ComponentBase
+    public class EmployeeDetailsBase : ComponentBase
     {
         public Employee Employee { get; set; } = new Employee();
 
