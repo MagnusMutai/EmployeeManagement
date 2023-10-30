@@ -16,6 +16,7 @@ namespace EmployeeManagement.Web.Pages
 
         protected override async Task OnInitializedAsync()
         {
+            Id = Id ?? "1";
             Employee = await EmployeeService.GetEmployee(Convert.ToInt32(Id));
         }
 
