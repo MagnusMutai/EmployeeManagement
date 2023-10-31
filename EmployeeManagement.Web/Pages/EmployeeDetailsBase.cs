@@ -1,6 +1,7 @@
 ﻿using EmployeeManagement.Models;
 using EmployeeManagement.Web.Services;
 using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Web;
 
 namespace EmployeeManagement.Web.Pages
 {
@@ -13,6 +14,7 @@ namespace EmployeeManagement.Web.Pages
 
         [Parameter]
         public string Id { get; set; }
+        protected string Coordinates { get; set; }
 
         protected override async Task OnInitializedAsync()
         {
@@ -20,5 +22,9 @@ namespace EmployeeManagement.Web.Pages
             Employee = await EmployeeService.GetEmployee(Convert.ToInt32(Id));
         }
 
+        protected void Mouse_Move(MouseEventArgs e)
+        {
+            Coordinates = $""
+        }
     }
 }

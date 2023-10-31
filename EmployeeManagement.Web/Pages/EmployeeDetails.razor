@@ -13,17 +13,18 @@
             </div>
 
             <div class="card-body text-center">
-                <img class="card-img-top" src="@Employee.PhotoPath" />
+                <img class="card-img-top" src="@Employee.PhotoPath" 
+                @onmousemove = "@Mouse_Move"/>
 
                 <h4>Employee ID : @Employee.EmployeeId</h4>
                 <h4>Email : @Employee.Email</h4>
-                <h4>Department : @Employee.Department.DepartmentName</h4>
+                <h4>Department : @(Employee.Department == null ? "N/A" : Employee.Department.DepartmentName)</h4>
             </div>
             <div class="card-footer text-center">
                 <a href="/" class="btn btn-primary">Back</a>
                 <a href="#" class="btn btn-primary">Edit</a>
                 <a href="#" class="btn btn-danger">Delete</a>
             </div>
-        </div>
+        </div> 
     </div>
 </div>
