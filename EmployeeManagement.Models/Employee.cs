@@ -20,5 +20,7 @@ namespace EmployeeManagement.Models
         public Gender Gender { get; set; }
         public int DepartmentId { get; set; }
         public string PhotoPath { get; set; }
+        //navigation property
+        public Department Department { get; set; }
     }
 }

@@ -90,4 +90,9 @@ a, .btn-link {
     100% {
         transform: rotate(360deg)
     }
+
+}
+
+.HideFooter {
+    display: none;
 }
