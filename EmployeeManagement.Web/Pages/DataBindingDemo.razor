@@ -8,3 +8,16 @@
 <div>
     <b>Name :</b>  @Name
 </div>
+
+<div>
+    <b>Name with salutation :</b>  @((Gender == "Male")? "Mr. " +  Name : "Mrs. " + Name)
+</div>
+
+<div>
+    <b>Name :</b>  <input value="@Name"/> 
+</div>
+<hr />
+
+<div>
+    <b>Name :</b>  <input value="@Name" @onchange = "@(e => {Name = e.Value.ToString();})"/>
+</div>
