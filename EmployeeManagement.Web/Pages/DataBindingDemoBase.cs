@@ -8,6 +8,8 @@ namespace EmployeeManagement.Web.Pages
         protected string Gender { get; set; } = "Male";
         protected string Color { get; set; } = "background-color: white";
 
+        public string Description { get; set; }
+
         //protected void OnText_Input(ChangeEventArgs e)
         //{
         //    Name = e.Value.ToString();
