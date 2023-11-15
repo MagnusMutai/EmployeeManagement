@@ -5,6 +5,7 @@ namespace EmployeeManagement.Web.Pages
 {
     public class DisplayEmployeeBase : ComponentBase
     {
-        public Employee Employee { get; set; }
+        [Parameter]
+        public Employee Employeess { get; set; }
     }
 }
