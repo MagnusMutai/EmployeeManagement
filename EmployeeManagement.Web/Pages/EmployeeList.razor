@@ -2,12 +2,19 @@
 @inherits EmployeeListBase
 
 <h3>Employee List</h3>
+
+<InputCheckbox></InputCheckbox>
+
 @if(Employees == null)
 {
     <div class="spinner"></div>
 }
 else{
+    
 <div class="card-deck">
-       
+        @foreach (var employee in Employees)
+        {
+            <DisplayEmployee Employee = "employee" ShowFooter = "ShowFooter"></DisplayEmployee>
+        }
 </div>
 }
