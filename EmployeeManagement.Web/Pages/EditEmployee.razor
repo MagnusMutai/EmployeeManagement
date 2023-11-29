@@ -1,7 +1,7 @@
-﻿@page "/editemployee"
+﻿@page "/editemployee/{id}"
 @inherits EditEmployeeBase
 
-<EditForm>
+<EditForm Model="@Employee">
     <h3>Edit Employee</h3>
     <hr/>
     <div class="form-group row">
