@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmployeeManagement.Web", "E
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmployeeManagement.Api", "EmployeeManagement.Api\EmployeeManagement.Api.csproj", "{7C2A47BF-77CE-4B3C-975C-E81F1C3D1407}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MagnusQ.Components", "MagnusQ.Components\MagnusQ.Components.csproj", "{B59B799D-5F11-49CF-B63B-3602B41B6302}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{7C2A47BF-77CE-4B3C-975C-E81F1C3D1407}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7C2A47BF-77CE-4B3C-975C-E81F1C3D1407}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7C2A47BF-77CE-4B3C-975C-E81F1C3D1407}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B59B799D-5F11-49CF-B63B-3602B41B6302}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B59B799D-5F11-49CF-B63B-3602B41B6302}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B59B799D-5F11-49CF-B63B-3602B41B6302}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B59B799D-5F11-49CF-B63B-3602B41B6302}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
