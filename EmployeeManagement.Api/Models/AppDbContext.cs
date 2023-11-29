@@ -36,7 +36,7 @@ namespace EmployeeManagement.Api.Models
                 EmployeeId = 1,
                 FirstName = "John",
                 LastName = "Hastings",
-                Email = "Mutaigilly02@gmail.com",
+                Email = "John@gmail.com",
                 DateOfBirth = new DateTime(2002, 02, 07),
                 Gender = Gender.Male,
                 DepartmentId = 1,
@@ -45,20 +45,20 @@ namespace EmployeeManagement.Api.Models
             modelBuilder.Entity<Employee>().HasData(new Employee
             {
                 EmployeeId = 2,
-                FirstName = "John",
-                LastName = "Hastings",
-                Email = "Mutaigilly02@gmail.com",
+                FirstName = "Linda",
+                LastName = "Mills",
+                Email = "Linda@gmail.com",
                 DateOfBirth = new DateTime(2002, 02, 07),
-                Gender = Gender.Male,
+                Gender = Gender.Female,
                 DepartmentId = 2,
                 PhotoPath = "/Images/JennyMarks.jpg"
             });
             modelBuilder.Entity<Employee>().HasData(new Employee
             {
                 EmployeeId = 3,
-                FirstName = "John",
-                LastName = "Hastings",
-                Email = "Mutaigilly02@gmail.com",
+                FirstName = "Harry",
+                LastName = "Long",
+                Email = "Harry@gmail.com",
                 DateOfBirth = new DateTime(2002, 02, 07),
                 Gender = Gender.Male,
                 DepartmentId = 3,
@@ -67,34 +67,34 @@ namespace EmployeeManagement.Api.Models
             modelBuilder.Entity<Employee>().HasData(new Employee
             {
                 EmployeeId = 4,
-                FirstName = "John",
-                LastName = "Hastings",
-                Email = "Mutaigilly02@gmail.com",
+                FirstName = "Mary",
+                LastName = "Jane",
+                Email = "Mary@gmail.com",
                 DateOfBirth = new DateTime(2002, 02, 07),
-                Gender = Gender.Male,
+                Gender = Gender.Female,
                 DepartmentId = 4,
                 PhotoPath = "/Images/NoahRobinson.jpg"
             });
             modelBuilder.Entity<Employee>().HasData(new Employee
             {
                 EmployeeId = 5,
-                FirstName = "John",
-                LastName = "Hastings",
-                Email = "Mutaigilly02@gmail.com",
+                FirstName = "Eunice",
+                LastName = "Hepta",
+                Email = "Eunice@gmail.com",
                 DateOfBirth = new DateTime(2002, 02, 07),
-                Gender = Gender.Male,
-                DepartmentId = 5,
+                Gender = Gender.Female,
+                DepartmentId = 3,
                 PhotoPath = "/Images/OliviaMills.jpg"
             });
             modelBuilder.Entity<Employee>().HasData(new Employee
             {
                 EmployeeId = 6,
-                FirstName = "John",
-                LastName = "Hastings",
-                Email = "Mutaigilly02@gmail.com",
+                FirstName = "Kelvin",
+                LastName = "Pokemon",
+                Email = "Kelvin@gmail.com",
                 DateOfBirth = new DateTime(2002, 02, 07),
                 Gender = Gender.Male,
-                DepartmentId = 6,
+                DepartmentId = 2,
                 PhotoPath = "/Images/Profile5_Woman.jpg"
             });
         }
