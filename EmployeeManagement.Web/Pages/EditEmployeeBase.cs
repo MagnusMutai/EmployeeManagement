@@ -19,10 +19,13 @@ namespace EmployeeManagement.Web.Pages
         [Parameter]
         public string Id { get; set; }
 
+        public string DepartmentId { get; set; }
+
         protected override async Task OnInitializedAsync()
         {
             Employee = await EmployeeService.GetEmployee(int.Parse(Id));
             Departments = (await DepartmentService.GetDepartments()).ToList();
+            DepartmentId = Employee.DepartmentId.ToString();
         }
 
     }
