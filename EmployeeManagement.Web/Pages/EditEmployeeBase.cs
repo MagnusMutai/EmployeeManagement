@@ -9,6 +9,16 @@ namespace EmployeeManagement.Web.Pages
         [Inject]
         public IEmployeeService EmployeeService{ get; set; }
 
+        [Parameter]
         public Employee Employee { get; set; } = new Employee();
+
+        [Parameter]
+        public string Id { get; set; }
+
+        protected override async Task OnInitializedAsync()
+        {
+            Employee = await EmployeeService.GetEmployee(int.Parse(Id));
+        }
+
     }
 }

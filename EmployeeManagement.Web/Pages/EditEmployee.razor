@@ -1,6 +1,16 @@
 ﻿@page "/editemployee"
 @inherits EditEmployeeBase
 
-@code {
-
-}
+<EditForm>
+    <h3>Edit Employee</h3>
+    <hr/>
+    <div class="form-group row">
+        <label for= "firstname" class="col-sm-2 col-form-label">
+            FirstName
+        </label>
+        <div class="col-sm-10">
+            <InputText id="firstname" class="form-control" placeholder="First Name" 
+            @bind-Value="Employee.FirstName"/>
+        </div>
+    </div>
+</EditForm>
