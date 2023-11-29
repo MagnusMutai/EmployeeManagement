@@ -1,0 +1,7 @@
+<Project>
+	
+<propertyGroup> 
+       <AccelerateBuildsInVisualStudio>true</AccelerateBuildsInVisualStudio>
+</propertyGroup>
+
+</Project>
