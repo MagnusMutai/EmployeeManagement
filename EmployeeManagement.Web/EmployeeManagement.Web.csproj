@@ -23,6 +23,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\EmployeeManagement.Models\EmployeeManagement.Models.csproj" />
+    <ProjectReference Include="..\MagnusQ.Components\MagnusQ.Components.csproj" />
   </ItemGroup>
 
 </Project>
