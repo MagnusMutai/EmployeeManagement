@@ -5,8 +5,15 @@
 <EditForm Model="@EditEmployeeModel" OnValidSubmit="HandleValidSubmit">
     <ObjectGraphDataAnnotationsValidator/>
     <ValidationSummary/>
-
-    <h3>Edit Employee</h3>
+    @if(HeaderText == null)
+    {
+        <h3>Employee</h3>
+    }
+    else
+    {
+         <h3>@HeaderText</h3> 
+    }
+    
     <hr/>
     <div class="form-group row">
         <label for= "firstname" class="col-sm-2 col-form-label">
@@ -87,7 +94,7 @@
             <InputDate id="dateOfBirth" @bind-Value="EditEmployeeModel.DateOfBirth" class="form-control" />
             </div>
         </div>
-
+@* 
     <div class="form-group row">
         <label for="deptName" class="col-sm-2 col-form-label">
             Department Name
@@ -97,9 +104,10 @@
                                      class="form-control" />
             <ValidationMessage For="@(() => EditEmployeeModel.Department.DepartmentName)"/>
         </div>
-    </div>
+    </div> *@
 
         <button class="btn btn-primary" type="submit">Submit</button>
+          <button class="btn btn-primary" type="button" @onclick="Delete_Employee">Delete</button>
 
 </EditForm>
  

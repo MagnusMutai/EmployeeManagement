@@ -17,14 +17,15 @@ namespace EmployeeManagement.Web.Pages
         public IMapper Mapper { get; set; }
         [Inject]
         public NavigationManager NavigationManager { get; set; }
-
+        [Parameter]
+        public string Id { get; set; }
         private Employee Employee { get; set; } = new Employee();
 
         public EditEmployeeModel EditEmployeeModel { get; set; } = new EditEmployeeModel();
         public List<Department> Departments { get; set; } = new List<Department>();
+        public string HeaderText { get; set; } 
 
-        [Parameter]
-        public string Id { get; set; }
+
 
 
         protected override async Task OnInitializedAsync()
@@ -33,10 +34,12 @@ namespace EmployeeManagement.Web.Pages
             
             if(employeeId != 0)
             {
+                HeaderText = "Edit Employee";
                 Employee = await EmployeeService.GetEmployee(int.Parse(Id));
             }
             else
             {
+                HeaderText = "Create Employee";
                 Employee = new Employee
                 {
                     DepartmentId = 1,
@@ -70,6 +73,11 @@ namespace EmployeeManagement.Web.Pages
                 NavigationManager.NavigateTo("/");
 
             }
+        }
+        
+        protected async Task Delete_Employee()
+        {
+
         }
 
     }
