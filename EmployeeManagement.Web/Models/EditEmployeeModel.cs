@@ -24,8 +24,8 @@ namespace EmployeeManagement.Web.Models
         public int DepartmentId { get; set; }
         public string PhotoPath { get; set; }
         //navigation/complex property
-        [ValidateComplexType]
-        public Department Department { get; set; } = new Department();
+        //[ValidateComplexType]
+        //public Department Department { get; set; } = new Department();
 
     }
 }
