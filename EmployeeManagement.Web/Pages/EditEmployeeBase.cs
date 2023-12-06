@@ -77,7 +77,8 @@ namespace EmployeeManagement.Web.Pages
         
         protected async Task Delete_Employee()
         {
-
+           await EmployeeService.DeleteEmployee(Employee.EmployeeId);
+            NavigationManager.NavigateTo("/");
         }
 
     }
