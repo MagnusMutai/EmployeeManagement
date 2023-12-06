@@ -1,4 +1,5 @@
-﻿using EmployeeManagement.Models;
+﻿using AutoMapper;
+using EmployeeManagement.Models;
 using EmployeeManagement.Web.Models;
 using EmployeeManagement.Web.Services;
 using Microsoft.AspNetCore.Components;
@@ -12,6 +13,10 @@ namespace EmployeeManagement.Web.Pages
 
         [Inject]
         public IDepartmentService DepartmentService { get; set; }
+        [Inject]
+        public IMapper Mapper { get; set; }
+        [Inject]
+        public NavigationManager NavigationManager { get; set; }
 
         private Employee Employee { get; set; } = new Employee();
 
@@ -24,25 +29,47 @@ namespace EmployeeManagement.Web.Pages
 
         protected override async Task OnInitializedAsync()
         {
-            Employee = await EmployeeService.GetEmployee(int.Parse(Id));
+            int.TryParse(Id, out int employeeId);
+            
+            if(employeeId != 0)
+            {
+                Employee = await EmployeeService.GetEmployee(int.Parse(Id));
+            }
+            else
+            {
+                Employee = new Employee
+                {
+                    DepartmentId = 1,
+                    DateOfBirth = DateTime.Now,
+                    PhotoPath = "images/nophoto.jpg"
+                };
+            }
+           
             Departments = (await DepartmentService.GetDepartments()).ToList();
-
-            EditEmployeeModel.EmployeeId = Employee.EmployeeId;
-            EditEmployeeModel.FirstName = Employee.FirstName;
-            EditEmployeeModel.LastName = Employee.LastName;
-            EditEmployeeModel.Email = Employee.Email;
-            EditEmployeeModel.ConfirmEmail = Employee.Email;
-            EditEmployeeModel.DateOfBirth = Employee.DateOfBirth;
-            EditEmployeeModel.Gender = Employee.Gender;
-            EditEmployeeModel.PhotoPath = Employee.PhotoPath;
-            EditEmployeeModel.DepartmentId = Employee.DepartmentId;
-            EditEmployeeModel.Department = Employee.Department;
-
+            Mapper.Map(Employee, EditEmployeeModel);
         }
 
-        protected void HandleValidSubmit()
+        protected async Task HandleValidSubmit()
         {
+            Mapper.Map(EditEmployeeModel, Employee);
 
+            Employee result = null;
+            
+            if(Employee.EmployeeId != 0)
+            {
+              result = await EmployeeService.UpdateEmployee(Employee);
+            }
+            else
+            {
+                result = await EmployeeService.CreateEmployee(Employee);
+            }
+
+            if (result != null)
+            {
+
+                NavigationManager.NavigateTo("/");
+
+            }
         }
 
     }
