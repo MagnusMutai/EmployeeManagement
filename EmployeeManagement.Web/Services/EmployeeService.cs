@@ -1,4 +1,5 @@
 ﻿using EmployeeManagement.Models;
+using System.Net;
 using System.Net.Http.Json;
 
 namespace EmployeeManagement.Web.Services
@@ -23,7 +24,8 @@ namespace EmployeeManagement.Web.Services
 
         public async Task DeleteEmployee(int id)
         {
-            await httpClient.DeleteAsync($"api/emeployees/{id}");
+                var result = await httpClient.DeleteAsync($"api/emeployees/{id}");
+                
         }
 
         public async Task<Employee> GetEmployee(int id)
