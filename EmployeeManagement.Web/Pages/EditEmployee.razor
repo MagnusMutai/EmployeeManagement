@@ -5,15 +5,7 @@
 <EditForm Model="@EditEmployeeModel" OnValidSubmit="HandleValidSubmit">
     <ObjectGraphDataAnnotationsValidator/>
     <ValidationSummary/>
-    @if(HeaderText == null)
-    {
-        <h3>Employee</h3>
-    }
-    else
-    {
-         <h3>@HeaderText</h3> 
-    }
-    
+        <h3>@PageHeaderText</h3>
     <hr/>
     <div class="form-group row">
         <label for= "firstname" class="col-sm-2 col-form-label">

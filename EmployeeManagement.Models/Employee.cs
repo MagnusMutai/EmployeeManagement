@@ -24,11 +24,6 @@ namespace EmployeeManagement.Models
         public int DepartmentId { get; set; } 
         public string PhotoPath { get; set; }
         //navigation property
-        public Department Department { get; set; }
-
-        public static implicit operator Employee(HttpResponseMessage v)
-        {
-            throw new NotImplementedException();
-        }
+        public Department? Department { get; set; }
     }
 }

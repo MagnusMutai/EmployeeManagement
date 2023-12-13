@@ -12,9 +12,13 @@ namespace EmployeeManagement.Web.Services
             this.httpClient = httpClient;
         }
 
-        public async Task<HttpResponseMessage> CreateEmployee(Employee newEmployee)
+        public async Task<Employee> CreateEmployee(Employee newEmployee)
         {
-            return await httpClient.PostAsJsonAsync<Employee>("api/employees", newEmployee);
+            HttpResponseMessage response = await httpClient.PostAsJsonAsync("api/employees", newEmployee);
+            response.EnsureSuccessStatusCode();
+
+            //return URI of the created resource
+            return newEmployee;
         }
 
         public async Task DeleteEmployee(int id)
@@ -32,10 +36,15 @@ namespace EmployeeManagement.Web.Services
             return await httpClient.GetFromJsonAsync<Employee[]>("api/employees");
         }
 
-        public async Task<HttpResponseMessage> UpdateEmployee(Employee updatedEmployee)
+        public async Task<Employee> UpdateEmployee(Employee updatedEmployee)
         {
 
-            return await httpClient.PutAsJsonAsync<Employee>("api/employees", updatedEmployee);
+            HttpResponseMessage response = await httpClient.PutAsJsonAsync("api/employees", updatedEmployee);
+            response.EnsureSuccessStatusCode();
+
+            //Deserialize the updated product from the response body
+            //updatedEmployee = await response.Content.ReadAsStringAsync<Employee>();
+            return updatedEmployee;
         }
     }
 }

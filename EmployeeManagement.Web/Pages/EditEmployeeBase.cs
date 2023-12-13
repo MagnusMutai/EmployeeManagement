@@ -23,7 +23,7 @@ namespace EmployeeManagement.Web.Pages
 
         public EditEmployeeModel EditEmployeeModel { get; set; } = new EditEmployeeModel();
         public List<Department> Departments { get; set; } = new List<Department>();
-        public string HeaderText { get; set; } 
+        public string PageHeaderText { get; set; } 
 
 
 
@@ -34,12 +34,12 @@ namespace EmployeeManagement.Web.Pages
             
             if(employeeId != 0)
             {
-                HeaderText = "Edit Employee";
+                PageHeaderText = "Edit Employee";
                 Employee = await EmployeeService.GetEmployee(int.Parse(Id));
             }
             else
             {
-                HeaderText = "Create Employee";
+                PageHeaderText = "Create Employee";
                 Employee = new Employee
                 {
                     DepartmentId = 1,
