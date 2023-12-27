@@ -28,4 +28,10 @@
     <ProjectReference Include="..\MagnusQ.Components\MagnusQ.Components.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Update="Pages\ChildComponent.razor">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+    </Content>
+  </ItemGroup>
+
 </Project>
