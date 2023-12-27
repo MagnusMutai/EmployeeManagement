@@ -12,8 +12,10 @@ namespace EmployeeManagement.Web.Pages
         [Inject]
         public IEmployeeService EmployeeService { get; set; }
 
+
         [Parameter]
         public string Id { get; set; }
+
         protected string Coordinates { get; set; }
 
         protected string ButtonText { get; set; } = "Hide Footer";

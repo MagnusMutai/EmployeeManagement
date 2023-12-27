@@ -17,6 +17,10 @@ namespace EmployeeManagement.Web.Pages
         public IMapper Mapper { get; set; }
         [Inject]
         public NavigationManager NavigationManager { get; set; }
+
+        [Parameter]
+        public EventCallback<int> OnEmployeeDeleted { get; set; }
+
         [Parameter]
         public string Id { get; set; }
         private Employee Employee { get; set; } = new Employee();
@@ -75,10 +79,22 @@ namespace EmployeeManagement.Web.Pages
             }
         }
         
-        protected async Task Delete_Employee()
+        /// <summary>
+        /// 
+        /// </summary>
+        protected MagnusQ.Components.ConfirmBase DeleteConfirmation { get; set; }
+        protected void Delete_Employee()
         {
-           await EmployeeService.DeleteEmployee(Employee.EmployeeId);
-            NavigationManager.NavigateTo("/");
+            DeleteConfirmation.Show();
+        }
+
+        protected async Task ConfirmDelete_Click(bool deleteConfirmed)
+        {
+            if (deleteConfirmed)
+            {
+                await EmployeeService.DeleteEmployee(Employee.EmployeeId);
+                await OnEmployeeDeleted.InvokeAsync(Employee.EmployeeId);
+            }
         }
 
     }

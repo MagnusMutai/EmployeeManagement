@@ -104,4 +104,5 @@
           <button class="btn btn-danger" type="button" @onclick="Delete_Employee">Delete</button>
         }
 </EditForm>
- 
+<Confirm ConfirmationChanged="ConfirmDelete_Click" @ref="DeleteConfirmation"
+         ConfirmationMessage=@($"Are you sure you want to delete \"{EditEmployeeModel.FirstName}\"")></Confirm>

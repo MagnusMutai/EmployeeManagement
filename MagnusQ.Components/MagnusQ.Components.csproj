@@ -15,4 +15,10 @@
     <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="7.0.13" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Update="Confirm.razor">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+    </Content>
+  </ItemGroup>
+
 </Project>
