@@ -1,8 +1,11 @@
-﻿<h1 style="@ElementStyle">Child Component Text</h1>
+﻿<h1 style="@ElementStyle; @H1Border">Child Component Text </h1>
 
 <GrandChildComponent></GrandChildComponent>
 
 @code{
-    [CascadingParameter]
+    [CascadingParameter(Name = "ColorStyle")]
     public string ElementStyle { get; set; }
+
+    [CascadingParameter(Name = "BorderStyle")]
+    public string H1Border { get; set; }
 }

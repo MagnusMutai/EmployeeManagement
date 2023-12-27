@@ -1,6 +1,9 @@
-﻿<h1 style="@ElementStyle">Grand-Child Component Text</h1>
+﻿<h1 style="@ElementStyle; @H1Border">Grand-Child Component Text</h1>
 
 @code {
-    [CascadingParameter]
+    [CascadingParameter(Name = "ColorStyle")]
     public string ElementStyle { get; set; }
+
+    [CascadingParameter(Name = "BorderStyle")]
+    public string H1Border { get; set; }
 }
