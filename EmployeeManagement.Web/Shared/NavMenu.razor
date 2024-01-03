@@ -9,6 +9,9 @@
 
 <div class="@NavMenuCssClass nav-scrollable" @onclick="ToggleNavMenu">
     <nav class="flex-column">
+
+       <AuthorizeView>
+           <Authorized>
         <div class="nav-item px-3">
             <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
                 <span class="oi oi-home" aria-hidden="true"></span> Home
@@ -23,17 +26,22 @@
             <NavLink class="nav-link" href="editemployee/1" Match="NavLinkMatch.All">
                 <span class="oi oi-pencil" aria-hidden="true"></span> Edit
             </NavLink>
-        </div> <div class="nav-item px-3">
-            <NavLink class="nav-link" href="/identity/account/login" Match="NavLinkMatch.All">
-                <span class="oi oi-lock-locked" aria-hidden="true"></span> Login
-            </NavLink>
-        </div>
+        </div> 
         <div class="nav-item px-3">
             <NavLink class="nav-link" href="/identity/account/logout" Match="NavLinkMatch.All">
-                <span class="oi oi-power-standby" aria-hidden="true"></span> Logout
+                <span class="oi oi-power-standby" aria-hidden="true"></span>
+                Logout
             </NavLink>
         </div>
-
+            </Authorized>
+        <NotAuthorized>
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="/identity/account/login" Match="NavLinkMatch.All">
+                    <span class="oi oi-lock-locked" aria-hidden="true"></span> Login
+                </NavLink>
+            </div>
+        </NotAuthorized>
+       </AuthorizeView>
 
     </nav>
 </div>
