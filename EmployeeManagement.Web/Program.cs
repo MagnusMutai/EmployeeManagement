@@ -14,6 +14,8 @@ builder.Services.AddDbContext<EmployeeManagementWebContext>(options => options.U
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<EmployeeManagementWebContext>();
 
 // Add services to the container.
+builder.Services.AddAuthentication("Identity.Application")
+                .AddCookie();
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddAutoMapper(typeof(EmployeeProfile));
@@ -43,7 +45,8 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-
+app.UseAuthentication();
+app.UseAuthorization();
 app.MapBlazorHub();
 app.MapFallbackToPage("/_Host");
 
