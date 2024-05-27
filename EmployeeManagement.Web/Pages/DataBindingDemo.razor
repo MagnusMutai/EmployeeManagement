@@ -12,10 +12,10 @@
 <div>
     <b>Name with salutation :</b>  @((Gender == "Male")? "Mr. " +  Name : "Mrs. " + Name)
 </div>
-
 <div>
     <b>Name :</b>  <input value="@Name"/> 
 </div>
+
 <hr />
 
 <div>
@@ -28,19 +28,20 @@
 <div>
     <b>Name :</b>  <input @bind="Name" @bind:event="oninput"/>
 </div>
+
 <hr />
+
 @* Binding to Element attribute *@
 <h3>Binding to an Html Element</h3>
-
 <div>
     <b>Color :</b>  <input @bind="Color" />
 </div>
-
 <div @bind-style="Color" @bind-style:event="onchange">
     <h3>The background Color of this text changes.</h3>
 </div>
 
 <hr />
+
 <h3>Two-way Data binding simple example</h3>
 <h4>Description</h4>
 
